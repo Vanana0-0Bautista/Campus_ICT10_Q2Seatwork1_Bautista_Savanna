@@ -10,7 +10,8 @@ Club_members = [
 
 
 
-def submit_form(event):
+def submit_form(e):
+
     first_name = document.getElementById("first_name").value
 
     last_name = document.getElementById("last_name").value
@@ -19,11 +20,10 @@ def submit_form(event):
 
     is_member = full_name in Club_members
     messages = {
-
-        True: "Congratulations!  " + full_name + " You are a member of the club.",
-        False: "Sorry!  " + full_name + " You are not a member of the club."
+        True: f"Welcome {full_name}! You are a member of the club.",
+        False: f"Sorry {full_name}, you are not a member of the club."
     }
 
-    document.getElementById("output").innerHTML = messages[is_member]
+    document.getElementById("result").innerHTML = messages[is_member]
 
  
